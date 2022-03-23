@@ -2,11 +2,14 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const cors = require("cors");
+const bodyParser = require("body-parser");
+
+// app.use(exp.urlencoded({ extended: true }));
+// app.use(exp.json());
 
 app.get('/', (req, res) => {
-    res.send('hello2222');
-    res.send('hello3333');
-    req.send('hello4444');
+    let c = a + b;
+    res.send(`${c}`);
 });
 
 // app.set('/', (req, res) => {
