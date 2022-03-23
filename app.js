@@ -1,25 +1,16 @@
-const exp = require('express');
-const app = exp();
+const express = require('express');
+const app = express();
 const PORT = 3000;
 const cors = require("cors");
-const bodyParser = require("body-parser");
-    const package = require("./package.json");
-    const apiRoot = "/api"
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cors({ origin: /http:\/\/localhost/ }));
-app.options('*', cors());
-
-// app.get('/', (req, res) => {
-//     res.send('hello2222');
-// });
-
-const router = exp.Router();
-router.get('/', (req, res) => {
-     res.send(`${package.description} - v${package.version}`);
+app.get('/', (req, res) => {
+    res.send('hello2222');
+    res.send('hello3333');
+    req.send('hello4444');
 });
 
-app.use(apiRoot,router);
+// app.set('/', (req, res) => {
+//     req.json({num:2});
+// });
 
 app.listen(PORT, () => console.log(`++++start++++++ ${PORT}`));
