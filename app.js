@@ -4,12 +4,20 @@ const PORT = 3000;
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
-// app.use(exp.urlencoded({ extended: true }));
-// app.use(exp.json());
+//  http://localhost:3000?numA/2/numB/3
 
-app.get('/', (req, res) => {
-    let c = a + b;
-    res.send(`${c}`);
+app.get("/numA/2/numB/3", (req, res) => {
+    //URLの?以降を取得
+    let pageNumB = window.location.search;
+    //一文字目の?を取り除く
+    pageNumB = pageNumB.substring(1);
+    //
+    const page = pageNumB.replace(/[^0-9]/g, '');
+    //
+    
+    // let c = a + b;
+    res.send(`${page}`);
+    //res.send("a");
 });
 
 // app.set('/', (req, res) => {
