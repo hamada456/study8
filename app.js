@@ -17,6 +17,7 @@ app.get("/numA/:intA/numB/:intB", (req, res) => {
     let objA = new Object();
 
     objA.num1 = c;
+    objA.num2 = d;
 
     res.json(objA);
 });

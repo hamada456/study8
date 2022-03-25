@@ -2,8 +2,10 @@
 
     getJSON();
 
-    document.getElementById("plus").textContent = testJ.num1;
-
+    document.getElementById("addition").textContent = testJ.num1;
+    document.getElementById("multiplication").textContent = testJ.num2;
+    document.getElementById("json").textContent = testJ;
+    
     function getJSON() {
         // XMLHttpRequest オブジェクトを生成する
         const req = new XMLHttpRequest();
