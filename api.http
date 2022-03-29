@@ -1,18 +1,24 @@
 
+
 http://localhost:3000/numA/3/numB/5
 
+ok
+--------------------------------------------------------------
+test
 
 
+http://localhost:3000/study8/app.js/numA/3/numB/5
 
+http://localhost:3000/numA/3/numB/5
 
-
+http://localhost:3000/numA/${num1}/numB/${num2}
 
 http://localhost/study8/app.js/numA/3/numB/4
 
 
 
 
-http://localhost/study8/app.js/intA/${num1}/intB/${num2}
+
 
 
 
