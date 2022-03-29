@@ -6,7 +6,11 @@ const cors = require("cors");
 //const bodyParser = require("body-parser");
 app.use(cors());
 //http://localhost:3000/numA/3/numB/5
+//http://localhost/study8/app.js/intA/${num1}/intB/${num2}
+
 app.get("/numA/:intA/numB/:intB", (req, res) => {
+//app.get(`http://localhost/study8/app.js/numA/${num1}/numB/${num2}`, (req, res) => {
+
     //res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
     const a = parseInt(req.params.intA);
     const b = parseInt(req.params.intB);
@@ -16,8 +20,8 @@ app.get("/numA/:intA/numB/:intB", (req, res) => {
 
     let objA = new Object();
 
-    objA.num1 = c;
-    objA.num2 = d;
+    objA.numA = c;
+    objA.numB = d;
 
     res.json(objA);
 });
