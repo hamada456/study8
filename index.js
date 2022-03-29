@@ -18,22 +18,25 @@
         // res.addEventListener("load", function(){ // loadイベントを登録します。
         //     console.log(this.response); // 通信結果を出力します。
         // }, false);
+
+        getJSON();
+
+        function getJSON() {
+            // XMLHttpRequest オブジェクトを生成する
+            const req = new XMLHttpRequest();
+            // 実際にサーバーへリクエストを送信
+            req.open("GET",`http://localhost:3000/numA/${num1}/numB/${num2}`,false);
+            req.send(null);
+            // JSON のデータ数分処理、値を返す
+            testJ = JSON.parse(req.responseText);
+
+            document.getElementById("addition").textContent = testJ.numA;
+            document.getElementById("multiplication").textContent = testJ.numB;
+        }
+
     });
 
-    //     getJSON();
-
-    // function getJSON() {
-    //     // XMLHttpRequest オブジェクトを生成する
-    //     const req = new XMLHttpRequest();
-    //     // 実際にサーバーへリクエストを送信
-    //     req.open("GET", "http://localhost:3000/numA/3/numB/5",false);
-    //     req.send(null);
-    //     // JSON のデータ数分処理、値を返す
-    //     testJ = JSON.parse(req.responseText);
-
-    //     document.getElementById("addition").textContent = testJ.num1;
-    //     document.getElementById("multiplication").textContent = testJ.num2;
-    // }
+    
     
         
 })();
