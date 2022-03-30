@@ -6,34 +6,22 @@
         let num2 = document.getElementById("B").value
 
         let sendUrl = `http://localhost:3000/numA/${num1}/numB/${num2}`;
-        //let sendUrl = `http://localhost:3000/numA/3/numB/5`;
-        //let sendUrl = "http://localhost:3000/study8/app.js/intA/"+num1+"/intB/"+num2;
 
         // XMLHttpRequest オブジェクトを生成する
-        const res = new XMLHttpRequest();
+        const req = new XMLHttpRequest();
         // 実際にサーバーへリクエストを送信
         res.open( "GET", sendUrl , false );
         res.send(null);
-        // JSON のデータ数分処理、値を返す
 
-        getJSON();
-
-        function getJSON() {
-            // XMLHttpRequest オブジェクトを生成する
-            const req = new XMLHttpRequest();
-            // 実際にサーバーへリクエストを送信
-            req.open("GET",`http://localhost:3000/numA/${num1}/numB/${num2}`,false);
-            req.send(null);
-            // JSON のデータ数分処理、値を返す
-            testJ = JSON.parse(req.responseText);
-
-            document.getElementById("addition").textContent = testJ.numA;
-            document.getElementById("multiplication").textContent = testJ.numB;
-        }
+        //const req = new XMLHttpRequest()と一緒
+        const res = req;
+        
+        //JSON のデータ数分処理、値を受け取る
+        testJ = JSON.parse(res.responseText);
+        //書き換え
+        document.getElementById("addition").textContent = testJ.numA;
+        document.getElementById("multiplication").textContent = testJ.numB;
 
     });
-
-    
-    
         
 })();
