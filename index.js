@@ -15,9 +15,6 @@
         res.open( "GET", sendUrl , false );
         res.send(null);
         // JSON のデータ数分処理、値を返す
-        // res.addEventListener("load", function(){ // loadイベントを登録します。
-        //     console.log(this.response); // 通信結果を出力します。
-        // }, false);
 
         getJSON();
 
