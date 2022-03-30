@@ -15,13 +15,13 @@
 
         //const req = new XMLHttpRequest()と一緒
         const res = req;
-        
+        if( res.status === 200 ) {
         //JSON のデータ数分処理、値を受け取る
         testJ = JSON.parse(res.responseText);
         //書き換え
         document.getElementById("addition").textContent = testJ.numA;
         document.getElementById("multiplication").textContent = testJ.numB;
-
+        }
     });
         
 })();
