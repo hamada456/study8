@@ -10,8 +10,8 @@
         // XMLHttpRequest オブジェクトを生成する
         const req = new XMLHttpRequest();
         // 実際にサーバーへリクエストを送信
-        res.open( "GET", sendUrl , false );
-        res.send(null);
+        req.open( "GET", sendUrl , false );
+        req.send(null);
 
         //const req = new XMLHttpRequest()と一緒
         const res = req;
